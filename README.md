@@ -46,3 +46,14 @@ Operators are divided into 5 groups:
 
 Every operator has functional implementation bound to it.  
 Because operators are associated with indextype, the indextype implementation type has specified procedures that allow to evaluate operator using index.
+
+## User-defined aggregates
+All aggregates definitions can be found under this location: [Aggregates](https://github.com/PiotrBelniak/example-of-ODCI-implementaton/tree/main/Aggregates-definitions).  
+
+These functions are simple usage of ODCIAggregate interface. They are built to simply answer the question: which readings highest/lowest value of parameter is classified as second among all readings.
+They are implemented via object types and have capability of working as both standard aggregate function and analitycal function.
+
+## Additional subprograms
+Since we do not have the way to easily obtain accurate data, we can generate it psuedo-randomly - this is the purpose meteo_reading_generator procedure.
+It allows us to generate data based on defined rules and propose boundary values - these are stored in METEO_READINGS_CONSTANTS package.  
+The rules are defined in the METEO_READINGS_AUX_FUNCTIONS package.
